@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Mansi Agrawal's data analytics portfolio." />
+	<title>Mansi Agrawal | Data Analytics Portfolio</title>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<style>
+		:root { font-family: 'Manrope', sans-serif; }
+		.mono { font-family: 'DM Mono', monospace; }
+		.grid-paper {
+			background-image: linear-gradient(rgba(20, 20, 18, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 20, 18, .06) 1px, transparent 1px);
+			background-size: 32px 32px;
+		}
+		.hero-visual { animation: rise-in .8s ease-out both; }
+		@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+	</style>
+</head>
+<body class="bg-[#f3f2ed] text-[#171714] antialiased">
+	<header class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+		<a href="#top" class="flex items-center gap-2 text-lg font-extrabold tracking-[-0.04em]" aria-label="Mansi Agrawal home">
+			<span class="grid h-8 w-8 place-items-center rounded-full bg-[#c9f45b] text-sm font-extrabold">MA</span>
+			MANSI AGRAWAL
+		</a>
+		<nav class="hidden items-center gap-8 text-sm font-semibold text-[#686861] md:flex" aria-label="Main navigation">
+			<a class="transition-colors hover:text-[#171714]" href="#about">About</a>
+			<a class="transition-colors hover:text-[#171714]" href="#work">Work</a>
+			<a class="transition-colors hover:text-[#171714]" href="#skills">Skills</a>
+		</nav>
+		<a href="#contact" class="rounded-full bg-[#171714] px-5 py-3 text-sm font-bold text-white transition-transform hover:-translate-y-0.5">Let's connect <span aria-hidden="true">↗</span></a>
+	</header>
+
+	<main id="top">
+		<section id="about" class="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 pt-12 sm:px-8 lg:grid-cols-[1fr_.9fr] lg:px-10 lg:pb-28 lg:pt-20">
+			<div>
+				<p class="mono mb-6 text-xs font-medium uppercase tracking-[.18em] text-[#73736a]"><span class="mr-2 inline-block h-2 w-2 rounded-full bg-[#b2d93c]"></span>Data analyst & storyteller</p>
+				<h1 class="max-w-2xl text-5xl font-extrabold leading-[.98] tracking-[-.07em]">Hi, I'm <span class="text-[#7c9c1e]">Mansi Agrawal.</span></h1>
+				<p class="mt-7 max-w-lg text-base leading-7 text-[#686861] sm:text-lg">I turn complex data into clear insights, thoughtful visualizations, and decisions that move projects forward.</p>
+				<div class="mt-9 flex flex-wrap items-center gap-4">
+					<a href="#work" class="rounded-full bg-[#c9f45b] px-6 py-4 text-sm font-extrabold transition-transform hover:-translate-y-0.5">View my work <span aria-hidden="true">→</span></a>
+					<a href="#contact" class="px-3 py-3 text-sm font-bold text-[#686861] underline decoration-[#c9f45b] decoration-2 underline-offset-4 hover:text-[#171714]">Let's talk</a>
+				</div>
+				<div class="mt-14 flex items-center gap-8 border-t border-[#d8d7d0] pt-5">
+					<div><strong class="block text-2xl tracking-[-.06em]">03</strong><span class="mono text-[10px] uppercase tracking-wider text-[#85857c]">Featured projects</span></div>
+					<div><strong class="block text-2xl tracking-[-.06em]">05</strong><span class="mono text-[10px] uppercase tracking-wider text-[#85857c]">Core tools</span></div>
+				</div>
+			</div>
+
+			<div id="work" class="hero-visual grid-paper relative overflow-hidden rounded-[2rem] border border-[#deddd5] bg-[#e9e8df] p-4 shadow-[0_24px_70px_rgba(43,43,34,.09)] sm:p-6">
+				<div class="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#c9f45b] opacity-70 blur-2xl"></div>
+				<div class="relative rounded-2xl border border-[#d6d5ca] bg-[#f8f7f2]/90 p-5 backdrop-blur-sm sm:p-7">
+					<div class="flex items-start justify-between"><div><p class="mono text-[10px] uppercase tracking-[.16em] text-[#88887e]">Featured project</p><h2 class="mt-2 text-xl font-extrabold tracking-[-.05em]">Customer insights</h2></div><span class="rounded-full bg-[#e6f6bc] px-3 py-1 text-xs font-bold text-[#607c16]">Case study</span></div>
+					<div class="mt-8 flex items-end gap-3"><span class="text-5xl font-extrabold tracking-[-.08em]">12.4k</span><span class="mb-2 text-xs text-[#85857c]">rows analyzed</span></div>
+					<div class="mt-8 flex h-40 items-end gap-2 border-b border-[#d9d8ce] pb-0 sm:gap-3">
+						<div class="h-[35%] flex-1 rounded-t-md bg-[#d7e7a3]"></div><div class="h-[52%] flex-1 rounded-t-md bg-[#d7e7a3]"></div><div class="h-[44%] flex-1 rounded-t-md bg-[#d7e7a3]"></div><div class="h-[68%] flex-1 rounded-t-md bg-[#c9f45b]"></div><div class="h-[58%] flex-1 rounded-t-md bg-[#c9f45b]"></div><div class="h-[81%] flex-1 rounded-t-md bg-[#b2d93c]"></div><div class="h-[94%] flex-1 rounded-t-md bg-[#171714]"></div>
+					</div>
+					<div class="mt-3 flex justify-between mono text-[9px] uppercase tracking-wider text-[#929289]"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+					<div class="mt-8 grid grid-cols-2 gap-3 border-t border-[#deddd5] pt-5"><div><p class="mono text-[9px] uppercase text-[#929289]">Tools used</p><p class="mt-1 font-bold">Python + SQL</p></div><div><p class="mono text-[9px] uppercase text-[#929289]">Impact</p><p class="mt-1 font-bold">+18.4%</p></div></div>
+				</div>
+			</div>
+		</section>
+
+		<section id="skills" class="border-y border-[#dad9d1] bg-[#171714] text-[#f3f2ed]">
+			<div class="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-3 lg:px-10">
+				<div><p class="mono text-xs uppercase tracking-[.16em] text-[#a5ad8b]">My toolkit</p><h2 class="mt-3 text-2xl font-extrabold tracking-[-.05em]">Curious questions. Useful answers.</h2></div>
+				<div class="border-t border-[#44443c] pt-4"><span class="mono text-sm text-[#c9f45b]">01</span><h3 class="mt-4 font-bold">Analyze</h3><p class="mt-2 text-sm leading-6 text-[#aaa9a0]">Python, SQL, Excel, and statistical thinking for reliable analysis.</p></div>
+				<div class="border-t border-[#44443c] pt-4"><span class="mono text-sm text-[#c9f45b]">02</span><h3 class="mt-4 font-bold">Communicate</h3><p class="mt-2 text-sm leading-6 text-[#aaa9a0]">Power BI, Tableau, and visual storytelling that makes insight memorable.</p></div>
+			</div>
+		</section>
+	</main>
+
+	<footer id="contact" class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#77776f] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><span class="font-bold text-[#171714]">MANSI AGRAWAL</span><span>Open to meaningful data work.</span><a class="font-bold text-[#171714] hover:underline" href="mailto:mansi.agrawal@example.com">mansi.agrawal@example.com</a></footer>
+</body>
+</html>
