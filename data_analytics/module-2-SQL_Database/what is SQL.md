@@ -148,6 +148,25 @@ create table tbl_reviews(
     
 )
 
+or
+
+create table tbl_users
+(
+uid int AUTO_INCREMENT primary key,
+name varchar(255),
+email varchar(255),
+password varchar(255),
+gender enum('male','female','other'),
+photo blob,
+address text,
+pincode tinyint,
+created_at varchar(255)    
+    
+
+)
+
+
+
 ```
 
 # create the thinks in workbench database 
@@ -167,3 +186,24 @@ address text
 
 );
 ```
+
+
+# alter : 
+
+1. alter is used to add new column after create a table 
+2. alter is used to modify | rename | or delete a column name is table 
+3. alter is used to add unique key of any column name 
+
+**examples**
+
+1. alter table tbl_employee add country varchar(255);
+2. alter table tbl_employee add state varchar(255);
+3. alter table tbl_employee add city varchar(255);
+4. alter table tbl_employee add photo blob after name;
+5. ALTER TABLE tbl_users
+ADD COLUMN country VARCHAR(255) AFTER pincode,
+ADD COLUMN state VARCHAR(255) AFTER country,
+ADD COLUMN city VARCHAR(255) AFTER state;
+6. alter table tbl_users change photo  upload_photo blob;
+7. alter table tbl_users drop created_at;
+8. alter table tbl_users add UNIQUE(`email`);
