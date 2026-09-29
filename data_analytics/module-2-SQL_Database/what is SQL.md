@@ -161,11 +161,8 @@ photo blob,
 address text,
 pincode tinyint,
 created_at varchar(255)    
-    
 
 )
-
-
 
 ```
 
@@ -207,3 +204,141 @@ ADD COLUMN city VARCHAR(255) AFTER state;
 6. alter table tbl_users change photo  upload_photo blob;
 7. alter table tbl_users drop created_at;
 8. alter table tbl_users add UNIQUE(`email`);
+
+# rename table:
+1. after create table via SQL we can changed a table name via **rename**
+  **examples**
+  ```
+   rename table tbl_country to country
+   or
+   rename table tbl_users to users
+
+  ```
+
+# rename database name :
+
+  ```  
+ CREATE DATABASE IF NOT EXISTS data_analytics_db_11am_tts;
+ DROP DATABASE IF EXISTS data_analytics_db_11am;
+
+  ```
+# change :
+
+1. change is a **keyword** that can be changed the column name of table
+
+**examples**
+
+```
+alter table employee change photo upload_photo blob;
+```
+  
+
+# drop : 
+
+1. drop is used to drop database after drop we can not rollback 
+2. drop is also used to drop table after drop we never rollback data or its structures 
+3. drop is also delete a column name 
+
+# note : after drop we never rollback
+
+**examples**
+
+```
+drop database data_analytics_db_11am_tts;
+or
+drop table users;
+or 
+drop table users
+or
+alter table users drop upload_photo;
+or 
+ALTER TABLE users
+DROP COLUMN `state`,
+DROP COLUMN `city`;
+
+```
+
+# truncate :
+
+1. truncate is used to empty all data from tables 
+2. after truncate we never rollback data from tables
+
+**examples**
+
+```
+truncate table users;
+or 
+truncate table review
+```
+# after truncate we never rollback data
+
+# **DML (data manipulation language)**
+
+1. DMl is used to insert single data or multiple data in tables 
+2. DMl is used to delete all data or particular one data or alternate data or range of data from tables
+3. DMl is used to update single data or multiple data in tables 
+
+**examples**
+
+1. **insert a single data or row**
+**examples**
+
+```
+insert into country (cname,created_at) values('india','29/09/2026')
+```
+
+2. **insert a multiple data or row**
+**examples**
+
+```
+insert into country (cname,created_at) values('usa','29/09/2026'),('australia','29/09/2026'),('uk','29/09/2026'),('iran','29/09/2026')
+
+or
+insert into country (cname,created_at) values('usa','29/09/2026'),('australia','29/09/2026'),('uk','29/09/2026'),('iran','29/09/2026')
+or
+
+insert into country values(null,'canada','29/09/2026'),(null,'thailand','29/09/2026'),(null,'china','29/09/2026'),(null,'japan','29/09/2026')
+
+```
+   
+**update data or row**
+
+1. update a single data 
+   **examples**
+   ```
+   update country set cname='america' where cid=9;
+   or
+   update country set cname='bharat', created_at='27/09/2026' where cid=1;
+
+   ```
+
+**delete data or rows**
+
+1. delete all data 
+   **examples**
+   ```
+   delete from country;
+   ```
+2. delete one  data from table 
+   **examples**
+   ```
+   delete from country where cid=2;
+   ```
+
+3. delete one  data from table via its name 
+   **examples**
+   ```
+   delete from country where cname='america';
+   ```
+
+4. delete alternate  data from table 
+   **examples**
+   ```
+   delete from country where cid in (2,4,6);
+   ```
+
+5. delete range of   data from table 
+   **examples**
+   ```
+   delete from country where cid between 100 and 255;
+   ```
