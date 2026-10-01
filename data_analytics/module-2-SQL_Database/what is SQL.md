@@ -299,6 +299,10 @@ or
 
 insert into country values(null,'canada','29/09/2026'),(null,'thailand','29/09/2026'),(null,'china','29/09/2026'),(null,'japan','29/09/2026')
 
+or
+
+INSERT into employee values(null, 'smith','smith.jpg','s254545',21,14500,'IT','150 rajkot','india','gujrat','rajkot'),(null, 'rushikesh','rushi.jpg','r254545',22,15500,'IT','150 rajkot','india','gujrat','rajkot'),(null, 'priyanshu','p.jpg','p254545',24,16500,'CSE','150 rajkot','india','gujrat','junagad'),(null, 'ashtha','astha.jpg','a254545',25,16500,'CSE','150 rajkot','india','gujrat','jamanagar'),(null, 'mansi','mansi.jpg','m254545',24,18500,'IT','150 feet ring road lucknow','india','uttar pradesh','lucknow')
+
 ```
    
 **update data or row**
@@ -342,3 +346,243 @@ insert into country values(null,'canada','29/09/2026'),(null,'thailand','29/09/2
    ```
    delete from country where cid between 100 and 255;
    ```
+
+
+# DQL (data query language)
+**DQL only used **select** keyword to fetch or retrieve data from tables
+
+
+1. DQL is used to fetch or retrieve data from tables
+2. DQL is used to fetch data from single table or multiple tables via join query
+3. DQL is used to select data from tables using **select** keyword
+4. DQL is also used to filter data from tables using **where** keyword
+5. select is also used to fetch or filter data in order by ascending or descending order using **order by** keyword
+6. select is also used to fetch or filter data in group by using **group by**
+7. select is also used to select range of from tables using **between** keyword
+8. select alternative data from tables using **in** keyword
+9. select data from tables using **like** keyword it is also used to search data from tables using **%** and **_** keyword or wildcard
+10. select data from tables using **distinct** keyword it is also used to fetch unique data from tables
+11. select data from tables using **limit** keyword it is also used to fetch limited data from tables.
+12. select data from tables using **join** keyword it is also used to fetch data from multiple tables via join query
+13. select data from tables using **union** keyword it is also used to fetch data from multiple tables via union query
+14. select data from tables using **subquery** keyword it is also used to fetch data from multiple tables via subquery
+
+  **examples**
+  ```
+  subquery means query inside query
+  
+  ```
+ 15. select data from tables using **alias** keyword it is also used to fetch data from multiple tables via alias query
+
+ **examples**
+  ```
+  alias means rename a column name or table name via select query
+  alias used keyword **as** to rename a column name or table name
+
+  ``` 
+
+  16. select data from tables using **aggregate functions** keyword it is also used to fetch data from multiple tables via aggregate functions query
+
+  **examples of aggrigate functions**
+  ```
+  1) max() - it is used to fetch maximum value from tables
+  2) min() - it is used to fetch minimum value from tables
+  3) sum() - it is used to fetch sum of values from tables
+  4) avg() - it is used to fetch average of values from tables
+  5) count() - it is used to fetch count of values from tables
+
+  ```
+
+  17. select used in scalar functions to fetch data from tables using **scalar functions** keyword it is also used to fetch data from multiple tables via scalar functions query
+
+  **examples of scalar functions**
+  ```
+   1) upper() - it is used to convert data in uppercase from tables
+   2) lower() - it is used to convert data in lowercase from tables
+   3) length() - it is used to fetch length of data from tables
+   4) round() - it is used to round the decimal values from tables
+   5) now() - it is used to fetch current date and time from tables
+   6) curdate() - it is used to fetch current date from tables
+   7) curtime() - it is used to fetch current time from tables
+
+   ```
+
+18. select used in date functions to fetch data from tables using **date functions** keyword it is also used to fetch data from multiple tables via date functions query
+
+  **examples of date functions**
+  ```
+   1) date() - it is used to fetch date from datetime values from tables
+   2) time() - it is used to fetch time from datetime values from tables
+   3) year() - it is used to fetch year from datetime values from tables
+   4) month() - it is used to fetch month from datetime values from tables
+   5) day() - it is used to fetch day from datetime values from tables
+   6) datediff() - it is used to fetch difference between two dates from tables
+   7) date_add() - it is used to add days, months, years to a date value in tables
+   8) date_sub() - it is used to subtract days, months, years from a date value in tables
+
+   ```
+19. select used in string functions to fetch data from tables using **string functions** keyword it is also used to fetch data from multiple tables via string functions query
+
+  **examples of string functions**
+  ```
+   1) concat() - it is used to concatenate two or more strings from tables
+   2) substring() - it is used to fetch a substring from a string value in tables
+   3) replace() - it is used to replace a substring with another substring in a string value in tables
+
+   4) trim() - it is used to remove leading and trailing spaces from a string value in tables
+   
+   5) instr() - it is used to find the position of a substring in a string value in tables
+
+   ```
+
+20. select used in mathematical functions to fetch data from tables using **mathematical functions** keyword it is also used to fetch data from multiple tables via mathematical functions query
+
+  **examples of mathematical functions**
+  ```
+   1) abs() - it is used to fetch absolute value of a number from tables
+
+   2) ceil() - it is used to fetch the smallest integer greater than or equal to a number from tables
+   
+   3) floor() - it is used to fetch the largest integer less than or equal to a number from tables
+   
+   4) power() - it is used to fetch the power of a number from tables
+   
+   5) sqrt() - it is used to fetch the square root of a number from tables
+
+   ```
+
+   **examples of DQL query**
+
+   1. select all data from table
+   
+   ```
+   select * from tablename;
+   or
+   select * from employee;
+   ```
+   2. select particular column name from table
+   
+   ```
+   select columnname from tablename;
+   or
+   select empid,name,age,salary from employee;
+
+   ```
+
+  3. select data of 1 rows 
+
+    **where** keyword is used to filter data from tables
+
+   ```
+   select * from tablename where columnname=value;
+   or
+   select * from employee where name='mansi';
+   or
+   select * from employee where empid=1;
+   or
+   select * from employee where empid=1 and name='smith';
+   or
+   select * from employee where empid=1 or name='mansi';
+   ```
+
+# select range of data from tables using **between** keyword
+
+   ```
+   select * from employee where empid between 1 and 4;
+
+   ```
+# select alternative data from tables using **in** keyword
+
+   ```
+   select * from employee where empid in (2,3,5);
+   or
+   select * from employee where name in ('smith','mansi');
+   or
+   select * from employee where empid not in (2,3,5);
+   or
+   select * from employee where name not in ('smith','mansi');
+   or
+   select * from employee where age in (25,30,35);
+   ```
+# select data using limit keyword to fetch limited data from tables
+
+   ```
+   select * from employee limit 3;
+   or
+   select * from employee limit 4;
+   or
+   select * from employee limit 6;
+   or
+   select * from employee limit 1,4;
+   or
+   select * from employee limit 0,4;
+   or
+   select * from employee limit 7,8;
+   ```
+# select data using like keyword to fetch data from tables
+  
+  **like** keyword is used to search data from tables using **%** and **_** keyword or wildcard
+
+   ```
+   select * from employee where name like 'a%';
+   or
+   select * from employee where name like '%h';
+   or
+   select * from employee where name like '%h';
+   or
+   select * from employee where name like '%m%';
+   or
+   select * from employee where name like '%a%';
+   or
+   select * from employee where name like '_m%';
+   or
+   select * from employee where name like '____h';
+   or
+   select * from employee where name like '____%h';
+
+   ```
+
+**list out all types of keywords used in SQL query**
+
+1. select
+2. from
+3. where
+4. order by
+5. group by
+6. having
+7. limit
+8. distinct
+9. in
+10. between
+11. like
+12. join
+13. union
+14. subquery
+15. alias
+16. aggregate functions
+17. scalar functions
+18. date functions
+19. string functions
+20. mathematical functions
+21. insert
+22. update
+13. delete
+14. alter
+15. rename
+16. drop
+17. truncate
+18. create
+19. change
+20. add
+
+# how to rename a column name in table using **alias** keyword
+
+1. alias is used to rename a column name in table using **as** keyword
+
+```
+select name as employee_name from employee;
+or
+select empid, name as employee_name from employee;
+or
+select empid, name as employee_name, address as employee_address from employee;
+```
