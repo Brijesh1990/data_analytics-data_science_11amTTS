@@ -585,4 +585,66 @@ or
 select empid, name as employee_name from employee;
 or
 select empid, name as employee_name, address as employee_address from employee;
+or
+select cname as country_name from tbl_country;
+
 ```
+
+# select a range of data 
+
+1. select * from country limit 0,15
+2. select * from country where cid between 1 and 8;
+3. select * from country where cname in ('bharat','usa','uk');
+
+# SQL function 
+ There are two types of sql function
+1. Aggrigate function
+  
+   - sum()
+   - avg()
+   - max()
+   - min()
+   - count()
+
+2. scalar function 
+
+   - first()
+   - last()
+   - lcase()
+   - ucase()
+   - now ()
+**examples**
+
+1. select sum(salary) as sum_of_salary from employee;
+2. select sum(salary) as sum_of_salary from employee where empid in (1,4,5);
+3. select sum(salary) as sum_of_salary from employee where empid limit 0,4;
+4. select sum(salary) as sum_of_salary from employee where empid limit 0,4
+5. select sum(salary) from employee where salary>17500 and salary < 20500;
+
+6. select avg(salary) as avg_of_salary from employee;
+7. select max(salary) as max_of_salary from employee
+8. select min(salary) as min_of_salary from employee
+9. select count(empid) as total_number_employee from employee
+
+# group by :
+
+ 1. group by is used to filter data on group of columns there we used group by 
+
+ 2. **having** is a cluse that can be used with aggrigate function but always after **group by** 
+
+ ```
+ select sum(salary), department from employee GROUP by department;
+ or
+ select sum(salary), department from employee GROUP by department having department='IT';
+  or
+ select sum(salary), department from employee GROUP by department having department='CSE';
+ or
+ select sum(salary), department from employee GROUP by department having department='EC'; 
+
+ ```
+
+
+
+
+
+
