@@ -643,8 +643,75 @@ select cname as country_name from tbl_country;
 
  ```
 
+ # scalar function :
+
+ 1. select first(empid) from employee;
+ 2. select last(empid) from employee;
+ 3. select lcase(name) from employee;
+ 4. select ucase(name) from employee;
+ 5. select now() from employee;
+
+# what is difference b/w delete | truncate | drop 
 
 
 
+| Command | What it removes | Can filter rows? | Table remains? |
+|---|---|---:|---:|
+| `DELETE` | Selected rows, or all rows if no `WHERE` | Yes | Yes |
+| `TRUNCATE` | All rows in a table | No | Yes |
+| `DROP` | The table itself, including its data and structure | No | No |
 
+```sql
+DELETE FROM employees WHERE department = 'Sales'; -- remove matching rows
+DELETE FROM employees;                            -- remove all rows
+
+TRUNCATE TABLE employees;                         -- empty the table
+
+DROP TABLE employees;                             -- remove the table
+```
+
+**In short:** `DELETE` removes rows selectively, `TRUNCATE` quickly empties a table, and `DROP` removes the table. Exact behavior—such as rollback support, identity-counter resets, and trigger behavior—can vary by database system.
+
+
+
+# TCL : 
+1. TCL stands transactional control language
+2. TCL is used to commit and rollback data from tables 
+3. TCL is used to same data after delete 
+4. TCL is used to rollback data after delete
+
+# queries in TCL 
+
+1. commit 
+2. rollback 
+
+**commit**
+
+1. commit used to save data after delete 
+2. commit is used in TCL 
+
+**query of commit**
+
+```
+start TRANSACTION;
+delete from country where cid=9;
+commit;
+
+
+```
+
+**rollback**
+
+1. rollback used to rollback data after delete 
+2. rollback is used in TCL 
+
+**query of rollback**
+
+```
+start TRANSACTION;
+delete from country where cid=8;
+select * from country where cid=8;
+rollback;
+select * from country where cid=8;
+```
 
