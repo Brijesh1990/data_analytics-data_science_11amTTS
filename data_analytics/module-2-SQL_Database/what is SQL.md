@@ -715,3 +715,133 @@ rollback;
 select * from country where cid=8;
 ```
 
+# key constraints in SQL : 
+
+1. key constraints provides limitations on tables 
+2. key constraints provides pk | uk | fk on tables 
+
+# types of key constraints  in SQL 
+
+# primary key : 
+
+ 1. pk is provides one times in a tables 
+ 2. pk never stored null values 
+ 3. pk should always auto_increments 
+
+ **create table**
+
+ ```
+  create table department(
+
+   depid int auto_increment primary key,
+   depname varchar(200),
+   created_at timestamp
+  )
+
+
+ ```
+
+![alt text](image-5.png)
+
+
+# unique key : 
+
+ 1. uk is provides more than one times in a tables on column 
+ 2. uk at least stored one times a null values 
+ 3. uk never stored dublicate data 
+
+ **create table**
+
+ ```
+  
+  create table students(
+
+   stid int auto_increment primary key,
+   name varchar(200),
+   email varchar(200),
+   mobile bigint,
+   gender varchar(200),
+   hobbies varchar(200),   
+   address text,
+   created_at timestamp
+  )
+
+ ```
+# how to create unique key on tables 
+
+```
+alter table students add UNIQUE KEY(`email`)
+or
+alter table students add UNIQUE KEY(`email`, `mobile`)
+
+```
+
+
+![alt text](image-6.png)
+
+
+
+# foreign key : 
+
+ 1. fk is provides more than one times in a tables on column 
+ 2. fk stored a dublicate data  
+ 3. fk used to provides relationship b/w one table to another tables with common field or columns in tables  
+
+ **create table**
+
+```
+create table country(
+
+    cid int AUTO_INCREMENT PRIMARY key, 
+    cname varchar(255),
+    created_at timestamp
+    
+)
+
+or
+
+create table state(
+
+    sid int AUTO_INCREMENT PRIMARY key, 
+    sname varchar(255),
+    created_at timestamp
+    
+)
+
+or
+
+create table city(
+
+    ctid int AUTO_INCREMENT PRIMARY key, 
+    ctname varchar(255),
+    created_at timestamp
+    
+)
+
+or
+
+create table users(
+
+    uid int AUTO_INCREMENT PRIMARY key, 
+    name varchar(255),
+    email varchar(255),
+    mobile bigint,
+    gender varchar(255),
+    hobby varchar(255),
+    cid int,
+    CONSTRAINT FOREIGN key(cid) REFERENCES country(cid),
+    
+    sid int,
+    CONSTRAINT FOREIGN key(sid) REFERENCES state(sid),
+    
+    ctid int,
+    CONSTRAINT FOREIGN key(ctid) REFERENCES city(ctid),
+    address text,
+    created_at timestamp
+    
+)
+
+```
+
+
+# SQL join :  
