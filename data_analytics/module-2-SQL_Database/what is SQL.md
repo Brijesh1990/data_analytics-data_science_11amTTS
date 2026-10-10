@@ -830,10 +830,8 @@ create table users(
     hobby varchar(255),
     cid int,
     CONSTRAINT FOREIGN key(cid) REFERENCES country(cid),
-    
     sid int,
     CONSTRAINT FOREIGN key(sid) REFERENCES state(sid),
-    
     ctid int,
     CONSTRAINT FOREIGN key(ctid) REFERENCES city(ctid),
     address text,
@@ -842,6 +840,84 @@ create table users(
 )
 
 ```
+
+# SQL Normalization  ?
+
+1. SQL normalization is used to removed dublicate or redundancies formate of data in tables 
+2. SQL normalization is used to devide tables using pk | uk | fk to removed dublicacy data formate in tables 
+3. There are some types of normalization 
+
+# types of nomalization 
+
+1. 1 NF (normalization form) 
+2. 2 NF (normalization form)
+3. 3 NF (normalization form)
+4. 4 NF (normalization form)
+5. 5 NF (normalization form)
+
+# 1 NF normalization form 
+
+- simple create tables and provides primary key without relationship 
+- this is called 1 NF 
+- create a table of college 
+
+
+```
+create table tbl_college(
+collegeid int primary key AUTO_INCREMENT,
+collegename varchar(255)
+)
+
+or
+
+create table tbl_department(
+depid int primary key AUTO_INCREMENT,
+depename varchar(255)
+)
+
+```
+
+# 2 NF (normalization form)
+1. create a table and add some table of columns as pk and uk 
+2. create table and add some uk to not accept dublicate data 
+
+```
+create table tbl_faculty(
+fid int primary key AUTO_INCREMENT,
+name varchar(255),
+email varchar(255),
+age int,
+address text,
+mobile bigint    
+)
+
+```
+# 3 NF (normalization form)
+
+1. 3 NF start to provides relationship b/w tables 
+2. 3 NF provides FK for common field to give relationship b/w tables 
+
+```
+create table tbl_students(
+stid int primary key AUTO_INCREMENT,
+studentname varchar(255),
+stdemail varchar(255),
+stdage int,
+stdaddress text,
+stdmobile bigint,    
+depid int,
+CONSTRAINT FOREIGN key(depid)  REFERENCES tbl_department(depid),
+fid int,
+CONSTRAINT FOREIGN key(fid)  REFERENCES tbl_faculty(fid),
+
+collegeid int,
+CONSTRAINT FOREIGN key(collegeid)  REFERENCES tbl_college(collegeid)
+    
+);
+
+```
+
+
 
 
 # SQL join :  
