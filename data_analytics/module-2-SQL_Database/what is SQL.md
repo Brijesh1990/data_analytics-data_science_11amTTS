@@ -917,7 +917,138 @@ CONSTRAINT FOREIGN key(collegeid)  REFERENCES tbl_college(collegeid)
 
 ```
 
-
-
-
 # SQL join :  
+1. SQL join are used to join more than one tables with common field 
+2. SQL join is used to join with match field one table to another table join that data 
+3. SQL join  are some types 
+
+
+# types of join 
+1. join 
+2. inner join 
+3. outer join 
+  - left join 
+  - right join 
+  - full join (not supported in mySql)
+4. union join
+5. cross join 
+6. self join 
+
+#  join : 
+1. SQL join are used to join more than one tables with common field 
+2. SQL join is used to join with match field one table to another table join that data 
+3. join are used by **join** keyword 
+
+
+**syntax of join**
+```
+
+select table1.*, columnname from table1 join table2 on table1.commoncolumndname = table2.commoncolumnname
+
+or
+select users.*, cname from users join country on users.cid=country.cid;
+
+or
+
+select users.*, cname , sname, ctname  from users join country on users.cid=country.cid join state on users.sid=state.sid join city on users.ctid=city.ctid;
+
+
+```
+
+# inner join : 
+ 
+1. SQL inner join are used to join more than one tables with common field 
+2. SQL inner join is used to join with match field one table to another table join that data and return all data of first table and also join matched data
+
+3. inner join are used by **inner join** keyword 
+
+**syntax of inner join**
+
+```
+select table1.*, columnname from table1 inner join table2 on table1.commoncolumndname = table2.commoncolumnname
+or
+select users.*, cname from users inner join country on users.cid=country.cid;
+or
+select users.*, cname , sname, ctname  from users inner join country on users.cid=country.cid inner join state on users.sid=state.sid inner join city on users.ctid=city.ctid;
+or
+select uid, name, email, mobile, cname , sname, ctname  from users inner join country on users.cid=country.cid inner join state on users.sid=state.sid inner join city on users.ctid=city.ctid;
+
+or
+
+select orders.*, first_name, product_name from orders inner join customers on orders.customer_id=customers.customer_id inner join products on orders.product_id=products.product_id;
+
+or
+
+select orders.*, first_name, email, product_name from orders inner join customers on orders.customer_id=customers.customer_id inner join products on orders.product_id=products.product_id;
+
+```
+
+# outer join :
+
+1. left join 
+2. right join 
+3. full join 
+
+# left join : 
+
+1. SQL left join are used to join more than one tables with common field 
+2. SQL left join is used to join with match field of first table of left rows and return all data of first table and matched with second table of left rows if data matched return all data otherwise return null values there we used left join 
+
+3. left join are used by **left join** keyword 
+
+**syntax**
+
+```
+select table1.*, columnname from table1 left join table2 on table1.commoncolumndname = table2.commoncolumnname
+
+or
+select users.*, cname from users left join country on users.cid=country.cid;
+or
+select users.*, cname , sname, ctname  from users left join country on users.cid=country.cid left join state on users.sid=state.sid left join city on users.ctid=city.ctid;
+or
+select uid, name, email, mobile, cname , sname, ctname  from users left join country on users.cid=country.cid left join state on users.sid=state.sid left join city on users.ctid=city.ctid;
+
+or
+
+select orders.*, first_name, product_name from orders ileft join customers on orders.customer_id=customers.customer_id left join products on orders.product_id=products.product_id;
+
+or
+
+select orders.*, first_name, email, product_name from orders left join customers on orders.customer_id=customers.customer_id left join products on orders.product_id=products.product_id;
+
+```
+
+
+# right join : 
+
+1. SQL right join are used to join more than one tables with common field 
+2. SQL right join is used to join with match field of second table of right rows and return all data of second table and matched with first table of right rows if data matched return all data otherwise return **null** values there we used right join 
+
+3. right join are used by **right join** keyword 
+
+**syntax**
+
+```
+select table1.*, columnname from table1 right join table2 on table1.commoncolumndname = table2.commoncolumnname
+
+or
+select users.*, cname from users right join country on users.cid=country.cid;
+or
+select users.*, cname , sname, ctname  from users right join country on users.cid=country.cid right join state on users.sid=state.sid right join city on users.ctid=city.ctid;
+
+or
+
+select uid, name, email, mobile, cname , sname, ctname  from users right join country on users.cid=country.cid right join state on users.sid=state.sid right join city on users.ctid=city.ctid;
+
+or
+
+select orders.*, first_name, product_name from orders right join customers on orders.customer_id=customers.customer_id right join products on orders.product_id=products.product_id;
+
+or
+
+select orders.*, first_name, email, product_name from orders right join customers on orders.customer_id=customers.customer_id right join products on orders.product_id=products.product_id;
+
+```
+
+
+
