@@ -589,7 +589,6 @@ or
 select cname as country_name from tbl_country;
 
 ```
-
 # select a range of data 
 
 1. select * from country limit 0,15
@@ -1018,7 +1017,6 @@ select orders.*, first_name, email, product_name from orders left join customers
 
 ```
 
-
 # right join : 
 
 1. SQL right join are used to join more than one tables with common field 
@@ -1050,5 +1048,93 @@ select orders.*, first_name, email, product_name from orders right join customer
 
 ```
 
+# full join : not supported inside of mysql 
+# full join =left join + right join 
+# note : we used union  join instead of full join  
+
+# unioun join : 
+
+# examples :
+
+```
+select users.*, cname from users left join country on users.cid=country.cid
+union
+select users.*, cname from users right join country on users.cid=country.cid 
+ 
+```
+
+# cross join : 
+
+1. cross join are used to join more than one table and its cross of return data from one table to another table
+2. its return a multiplication of each rows to another table data
+3. its return a dublicate data either match or not 
+
+# examples 
+```
+select * from users cross join country;
+```
+
+# its used in chain marketing 
+
+```
+     A
+ B    C     D
+EFG  HIJ   KLM   
+
+```
+
+# w.a.q to find second highest slalry from employee using subquery 
+1. subquery are used to query within another query 
+2. subquery are used to find above answer 
+3. fond highest salary
+# examples
+```
+select max(salary) as second_highest_salary from employee where salary<(select max(salary) from employee)
+or 
+select max(salary) as highest_salary from employee
+
+```
+# w.a.q to find second highest salary from employee using limit 
+# examples 
+```
+select salary as second_highest_salary from employee ORDER by salary desc limit 1,1;
+or
+select salary as max_highest_salary from employee ORDER by salary desc limit 0,1;
+or
+select salary as third_highest_salary from employee ORDER by salary desc limit 2,1;
+
+```
+# w.a.q to find a sum of salary on department wise 
+```
+select sum(salary), department as sumof_salary_department from employee group by department;
+```
+
+# w.a.q to alis of any column name 
+```
+select name as employee_name from employee 
+```
+# w.a.q to find systems default date and time via sql query 
+```
+select now()
+or
+select CURRENT_DATE()
+or
+select CURRENT_TIME()
+```
+# w.a.q to search any name in tables start with 's' or 'a' or 'b'
+
+```
+select * from employee where name like 's%';
+or
+select * from employee where name like 'a%';
+or
+select * from employee where name like 'b%';
+or
+select * from employee where name like '%s';
+or
+select * from employee where name like '%a%';
+```
+
+# self join : 
 
 
