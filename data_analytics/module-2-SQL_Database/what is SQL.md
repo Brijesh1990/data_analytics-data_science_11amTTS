@@ -139,13 +139,13 @@ department varchar(200)
 ```
 create table tbl_reviews(
 
-    rid int AUTO_INCREMENT primary key,
-    name varchar(250),
-    email varchar(255),
-    phone bigint,
-    rating enum('*','**','***','****','*****'),
-    COMMENT text
-    
+rid int AUTO_INCREMENT primary key,
+name varchar(250),
+email varchar(255),
+phone bigint,
+rating enum('*','**','***','****','*****'),
+COMMENT text
+
 )
 
 or
@@ -207,21 +207,21 @@ ADD COLUMN city VARCHAR(255) AFTER state;
 
 # rename table:
 1. after create table via SQL we can changed a table name via **rename**
-  **examples**
-  ```
-   rename table tbl_country to country
-   or
-   rename table tbl_users to users
+**examples**
+```
+rename table tbl_country to country
+or
+rename table tbl_users to users
 
-  ```
+```
 
 # rename database name :
 
-  ```  
- CREATE DATABASE IF NOT EXISTS data_analytics_db_11am_tts;
- DROP DATABASE IF EXISTS data_analytics_db_11am;
+```  
+CREATE DATABASE IF NOT EXISTS data_analytics_db_11am_tts;
+DROP DATABASE IF EXISTS data_analytics_db_11am;
 
-  ```
+```
 # change :
 
 1. change is a **keyword** that can be changed the column name of table
@@ -231,7 +231,7 @@ ADD COLUMN city VARCHAR(255) AFTER state;
 ```
 alter table employee change photo upload_photo blob;
 ```
-  
+
 
 # drop : 
 
@@ -304,48 +304,48 @@ or
 INSERT into employee values(null, 'smith','smith.jpg','s254545',21,14500,'IT','150 rajkot','india','gujrat','rajkot'),(null, 'rushikesh','rushi.jpg','r254545',22,15500,'IT','150 rajkot','india','gujrat','rajkot'),(null, 'priyanshu','p.jpg','p254545',24,16500,'CSE','150 rajkot','india','gujrat','junagad'),(null, 'ashtha','astha.jpg','a254545',25,16500,'CSE','150 rajkot','india','gujrat','jamanagar'),(null, 'mansi','mansi.jpg','m254545',24,18500,'IT','150 feet ring road lucknow','india','uttar pradesh','lucknow')
 
 ```
-   
+
 **update data or row**
 
 1. update a single data 
-   **examples**
-   ```
-   update country set cname='america' where cid=9;
-   or
-   update country set cname='bharat', created_at='27/09/2026' where cid=1;
+**examples**
+```
+update country set cname='america' where cid=9;
+or
+update country set cname='bharat', created_at='27/09/2026' where cid=1;
 
-   ```
+```
 
 **delete data or rows**
 
 1. delete all data 
-   **examples**
-   ```
-   delete from country;
-   ```
+**examples**
+```
+delete from country;
+```
 2. delete one  data from table 
-   **examples**
-   ```
-   delete from country where cid=2;
-   ```
+**examples**
+```
+delete from country where cid=2;
+```
 
 3. delete one  data from table via its name 
-   **examples**
-   ```
-   delete from country where cname='america';
-   ```
+**examples**
+```
+delete from country where cname='america';
+```
 
 4. delete alternate  data from table 
-   **examples**
-   ```
-   delete from country where cid in (2,4,6);
-   ```
+**examples**
+```
+delete from country where cid in (2,4,6);
+```
 
 5. delete range of   data from table 
-   **examples**
-   ```
-   delete from country where cid between 100 and 255;
-   ```
+**examples**
+```
+delete from country where cid between 100 and 255;
+```
 
 
 # DQL (data query language)
@@ -367,180 +367,180 @@ INSERT into employee values(null, 'smith','smith.jpg','s254545',21,14500,'IT','1
 13. select data from tables using **union** keyword it is also used to fetch data from multiple tables via union query
 14. select data from tables using **subquery** keyword it is also used to fetch data from multiple tables via subquery
 
-  **examples**
-  ```
-  subquery means query inside query
-  
-  ```
- 15. select data from tables using **alias** keyword it is also used to fetch data from multiple tables via alias query
+**examples**
+```
+subquery means query inside query
 
- **examples**
-  ```
-  alias means rename a column name or table name via select query
-  alias used keyword **as** to rename a column name or table name
+```
+15. select data from tables using **alias** keyword it is also used to fetch data from multiple tables via alias query
 
-  ``` 
+**examples**
+```
+alias means rename a column name or table name via select query
+alias used keyword **as** to rename a column name or table name
 
-  16. select data from tables using **aggregate functions** keyword it is also used to fetch data from multiple tables via aggregate functions query
+``` 
 
-  **examples of aggrigate functions**
-  ```
-  1) max() - it is used to fetch maximum value from tables
-  2) min() - it is used to fetch minimum value from tables
-  3) sum() - it is used to fetch sum of values from tables
-  4) avg() - it is used to fetch average of values from tables
-  5) count() - it is used to fetch count of values from tables
+16. select data from tables using **aggregate functions** keyword it is also used to fetch data from multiple tables via aggregate functions query
 
-  ```
+**examples of aggrigate functions**
+```
+1) max() - it is used to fetch maximum value from tables
+2) min() - it is used to fetch minimum value from tables
+3) sum() - it is used to fetch sum of values from tables
+4) avg() - it is used to fetch average of values from tables
+5) count() - it is used to fetch count of values from tables
 
-  17. select used in scalar functions to fetch data from tables using **scalar functions** keyword it is also used to fetch data from multiple tables via scalar functions query
+```
 
-  **examples of scalar functions**
-  ```
-   1) upper() - it is used to convert data in uppercase from tables
-   2) lower() - it is used to convert data in lowercase from tables
-   3) length() - it is used to fetch length of data from tables
-   4) round() - it is used to round the decimal values from tables
-   5) now() - it is used to fetch current date and time from tables
-   6) curdate() - it is used to fetch current date from tables
-   7) curtime() - it is used to fetch current time from tables
+17. select used in scalar functions to fetch data from tables using **scalar functions** keyword it is also used to fetch data from multiple tables via scalar functions query
 
-   ```
+**examples of scalar functions**
+```
+1) upper() - it is used to convert data in uppercase from tables
+2) lower() - it is used to convert data in lowercase from tables
+3) length() - it is used to fetch length of data from tables
+4) round() - it is used to round the decimal values from tables
+5) now() - it is used to fetch current date and time from tables
+6) curdate() - it is used to fetch current date from tables
+7) curtime() - it is used to fetch current time from tables
+
+```
 
 18. select used in date functions to fetch data from tables using **date functions** keyword it is also used to fetch data from multiple tables via date functions query
 
-  **examples of date functions**
-  ```
-   1) date() - it is used to fetch date from datetime values from tables
-   2) time() - it is used to fetch time from datetime values from tables
-   3) year() - it is used to fetch year from datetime values from tables
-   4) month() - it is used to fetch month from datetime values from tables
-   5) day() - it is used to fetch day from datetime values from tables
-   6) datediff() - it is used to fetch difference between two dates from tables
-   7) date_add() - it is used to add days, months, years to a date value in tables
-   8) date_sub() - it is used to subtract days, months, years from a date value in tables
+**examples of date functions**
+```
+1) date() - it is used to fetch date from datetime values from tables
+2) time() - it is used to fetch time from datetime values from tables
+3) year() - it is used to fetch year from datetime values from tables
+4) month() - it is used to fetch month from datetime values from tables
+5) day() - it is used to fetch day from datetime values from tables
+6) datediff() - it is used to fetch difference between two dates from tables
+7) date_add() - it is used to add days, months, years to a date value in tables
+8) date_sub() - it is used to subtract days, months, years from a date value in tables
 
-   ```
+```
 19. select used in string functions to fetch data from tables using **string functions** keyword it is also used to fetch data from multiple tables via string functions query
 
-  **examples of string functions**
-  ```
-   1) concat() - it is used to concatenate two or more strings from tables
-   2) substring() - it is used to fetch a substring from a string value in tables
-   3) replace() - it is used to replace a substring with another substring in a string value in tables
+**examples of string functions**
+```
+1) concat() - it is used to concatenate two or more strings from tables
+2) substring() - it is used to fetch a substring from a string value in tables
+3) replace() - it is used to replace a substring with another substring in a string value in tables
 
-   4) trim() - it is used to remove leading and trailing spaces from a string value in tables
-   
-   5) instr() - it is used to find the position of a substring in a string value in tables
+4) trim() - it is used to remove leading and trailing spaces from a string value in tables
 
-   ```
+5) instr() - it is used to find the position of a substring in a string value in tables
+
+```
 
 20. select used in mathematical functions to fetch data from tables using **mathematical functions** keyword it is also used to fetch data from multiple tables via mathematical functions query
 
-  **examples of mathematical functions**
-  ```
-   1) abs() - it is used to fetch absolute value of a number from tables
+**examples of mathematical functions**
+```
+1) abs() - it is used to fetch absolute value of a number from tables
 
-   2) ceil() - it is used to fetch the smallest integer greater than or equal to a number from tables
-   
-   3) floor() - it is used to fetch the largest integer less than or equal to a number from tables
-   
-   4) power() - it is used to fetch the power of a number from tables
-   
-   5) sqrt() - it is used to fetch the square root of a number from tables
+2) ceil() - it is used to fetch the smallest integer greater than or equal to a number from tables
 
-   ```
+3) floor() - it is used to fetch the largest integer less than or equal to a number from tables
 
-   **examples of DQL query**
+4) power() - it is used to fetch the power of a number from tables
 
-   1. select all data from table
-   
-   ```
-   select * from tablename;
-   or
-   select * from employee;
-   ```
-   2. select particular column name from table
-   
-   ```
-   select columnname from tablename;
-   or
-   select empid,name,age,salary from employee;
+5) sqrt() - it is used to fetch the square root of a number from tables
 
-   ```
+```
 
-  3. select data of 1 rows 
+**examples of DQL query**
 
-    **where** keyword is used to filter data from tables
+1. select all data from table
 
-   ```
-   select * from tablename where columnname=value;
-   or
-   select * from employee where name='mansi';
-   or
-   select * from employee where empid=1;
-   or
-   select * from employee where empid=1 and name='smith';
-   or
-   select * from employee where empid=1 or name='mansi';
-   ```
+```
+select * from tablename;
+or
+select * from employee;
+```
+2. select particular column name from table
+
+```
+select columnname from tablename;
+or
+select empid,name,age,salary from employee;
+
+```
+
+3. select data of 1 rows 
+
+**where** keyword is used to filter data from tables
+
+```
+select * from tablename where columnname=value;
+or
+select * from employee where name='mansi';
+or
+select * from employee where empid=1;
+or
+select * from employee where empid=1 and name='smith';
+or
+select * from employee where empid=1 or name='mansi';
+```
 
 # select range of data from tables using **between** keyword
 
-   ```
-   select * from employee where empid between 1 and 4;
+```
+select * from employee where empid between 1 and 4;
 
-   ```
+```
 # select alternative data from tables using **in** keyword
 
-   ```
-   select * from employee where empid in (2,3,5);
-   or
-   select * from employee where name in ('smith','mansi');
-   or
-   select * from employee where empid not in (2,3,5);
-   or
-   select * from employee where name not in ('smith','mansi');
-   or
-   select * from employee where age in (25,30,35);
-   ```
+```
+select * from employee where empid in (2,3,5);
+or
+select * from employee where name in ('smith','mansi');
+or
+select * from employee where empid not in (2,3,5);
+or
+select * from employee where name not in ('smith','mansi');
+or
+select * from employee where age in (25,30,35);
+```
 # select data using limit keyword to fetch limited data from tables
 
-   ```
-   select * from employee limit 3;
-   or
-   select * from employee limit 4;
-   or
-   select * from employee limit 6;
-   or
-   select * from employee limit 1,4;
-   or
-   select * from employee limit 0,4;
-   or
-   select * from employee limit 7,8;
-   ```
+```
+select * from employee limit 3;
+or
+select * from employee limit 4;
+or
+select * from employee limit 6;
+or
+select * from employee limit 1,4;
+or
+select * from employee limit 0,4;
+or
+select * from employee limit 7,8;
+```
 # select data using like keyword to fetch data from tables
-  
-  **like** keyword is used to search data from tables using **%** and **_** keyword or wildcard
 
-   ```
-   select * from employee where name like 'a%';
-   or
-   select * from employee where name like '%h';
-   or
-   select * from employee where name like '%h';
-   or
-   select * from employee where name like '%m%';
-   or
-   select * from employee where name like '%a%';
-   or
-   select * from employee where name like '_m%';
-   or
-   select * from employee where name like '____h';
-   or
-   select * from employee where name like '____%h';
+**like** keyword is used to search data from tables using **%** and **_** keyword or wildcard
 
-   ```
+```
+select * from employee where name like 'a%';
+or
+select * from employee where name like '%h';
+or
+select * from employee where name like '%h';
+or
+select * from employee where name like '%m%';
+or
+select * from employee where name like '%a%';
+or
+select * from employee where name like '_m%';
+or
+select * from employee where name like '____h';
+or
+select * from employee where name like '____%h';
+
+```
 
 **list out all types of keywords used in SQL query**
 
@@ -596,22 +596,22 @@ select cname as country_name from tbl_country;
 3. select * from country where cname in ('bharat','usa','uk');
 
 # SQL function 
- There are two types of sql function
+There are two types of sql function
 1. Aggrigate function
-  
-   - sum()
-   - avg()
-   - max()
-   - min()
-   - count()
+
+- sum()
+- avg()
+- max()
+- min()
+- count()
 
 2. scalar function 
 
-   - first()
-   - last()
-   - lcase()
-   - ucase()
-   - now ()
+- first()
+- last()
+- lcase()
+- ucase()
+- now ()
 **examples**
 
 1. select sum(salary) as sum_of_salary from employee;
@@ -627,28 +627,28 @@ select cname as country_name from tbl_country;
 
 # group by :
 
- 1. group by is used to filter data on group of columns there we used group by 
+1. group by is used to filter data on group of columns there we used group by 
 
- 2. **having** is a cluse that can be used with aggrigate function but always after **group by** 
+2. **having** is a cluse that can be used with aggrigate function but always after **group by** 
 
- ```
- select sum(salary), department from employee GROUP by department;
- or
- select sum(salary), department from employee GROUP by department having department='IT';
-  or
- select sum(salary), department from employee GROUP by department having department='CSE';
- or
- select sum(salary), department from employee GROUP by department having department='EC'; 
+```
+select sum(salary), department from employee GROUP by department;
+or
+select sum(salary), department from employee GROUP by department having department='IT';
+or
+select sum(salary), department from employee GROUP by department having department='CSE';
+or
+select sum(salary), department from employee GROUP by department having department='EC'; 
 
- ```
+```
 
- # scalar function :
+# scalar function :
 
- 1. select first(empid) from employee;
- 2. select last(empid) from employee;
- 3. select lcase(name) from employee;
- 4. select ucase(name) from employee;
- 5. select now() from employee;
+1. select first(empid) from employee;
+2. select last(empid) from employee;
+3. select lcase(name) from employee;
+4. select ucase(name) from employee;
+5. select now() from employee;
 
 # what is difference b/w delete | truncate | drop 
 
@@ -723,49 +723,49 @@ select * from country where cid=8;
 
 # primary key : 
 
- 1. pk is provides one times in a tables 
- 2. pk never stored null values 
- 3. pk should always auto_increments 
+1. pk is provides one times in a tables 
+2. pk never stored null values 
+3. pk should always auto_increments 
 
- **create table**
+**create table**
 
- ```
-  create table department(
+```
+create table department(
 
-   depid int auto_increment primary key,
-   depname varchar(200),
-   created_at timestamp
-  )
+depid int auto_increment primary key,
+depname varchar(200),
+created_at timestamp
+)
 
 
- ```
+```
 
 ![alt text](image-5.png)
 
 
 # unique key : 
 
- 1. uk is provides more than one times in a tables on column 
- 2. uk at least stored one times a null values 
- 3. uk never stored dublicate data 
+1. uk is provides more than one times in a tables on column 
+2. uk at least stored one times a null values 
+3. uk never stored dublicate data 
 
- **create table**
+**create table**
 
- ```
-  
-  create table students(
+```
 
-   stid int auto_increment primary key,
-   name varchar(200),
-   email varchar(200),
-   mobile bigint,
-   gender varchar(200),
-   hobbies varchar(200),   
-   address text,
-   created_at timestamp
-  )
+create table students(
 
- ```
+stid int auto_increment primary key,
+name varchar(200),
+email varchar(200),
+mobile bigint,
+gender varchar(200),
+hobbies varchar(200),   
+address text,
+created_at timestamp
+)
+
+```
 # how to create unique key on tables 
 
 ```
@@ -782,60 +782,60 @@ alter table students add UNIQUE KEY(`email`, `mobile`)
 
 # foreign key : 
 
- 1. fk is provides more than one times in a tables on column 
- 2. fk stored a dublicate data  
- 3. fk used to provides relationship b/w one table to another tables with common field or columns in tables  
+1. fk is provides more than one times in a tables on column 
+2. fk stored a dublicate data  
+3. fk used to provides relationship b/w one table to another tables with common field or columns in tables  
 
- **create table**
+**create table**
 
 ```
 create table country(
 
-    cid int AUTO_INCREMENT PRIMARY key, 
-    cname varchar(255),
-    created_at timestamp
-    
+cid int AUTO_INCREMENT PRIMARY key, 
+cname varchar(255),
+created_at timestamp
+
 )
 
 or
 
 create table state(
 
-    sid int AUTO_INCREMENT PRIMARY key, 
-    sname varchar(255),
-    created_at timestamp
-    
+sid int AUTO_INCREMENT PRIMARY key, 
+sname varchar(255),
+created_at timestamp
+
 )
 
 or
 
 create table city(
 
-    ctid int AUTO_INCREMENT PRIMARY key, 
-    ctname varchar(255),
-    created_at timestamp
-    
+ctid int AUTO_INCREMENT PRIMARY key, 
+ctname varchar(255),
+created_at timestamp
+
 )
 
 or
 
 create table users(
 
-    uid int AUTO_INCREMENT PRIMARY key, 
-    name varchar(255),
-    email varchar(255),
-    mobile bigint,
-    gender varchar(255),
-    hobby varchar(255),
-    cid int,
-    CONSTRAINT FOREIGN key(cid) REFERENCES country(cid),
-    sid int,
-    CONSTRAINT FOREIGN key(sid) REFERENCES state(sid),
-    ctid int,
-    CONSTRAINT FOREIGN key(ctid) REFERENCES city(ctid),
-    address text,
-    created_at timestamp
-    
+uid int AUTO_INCREMENT PRIMARY key, 
+name varchar(255),
+email varchar(255),
+mobile bigint,
+gender varchar(255),
+hobby varchar(255),
+cid int,
+CONSTRAINT FOREIGN key(cid) REFERENCES country(cid),
+sid int,
+CONSTRAINT FOREIGN key(sid) REFERENCES state(sid),
+ctid int,
+CONSTRAINT FOREIGN key(ctid) REFERENCES city(ctid),
+address text,
+created_at timestamp
+
 )
 
 ```
@@ -911,7 +911,7 @@ CONSTRAINT FOREIGN key(fid)  REFERENCES tbl_faculty(fid),
 
 collegeid int,
 CONSTRAINT FOREIGN key(collegeid)  REFERENCES tbl_college(collegeid)
-    
+
 );
 
 ```
@@ -926,9 +926,9 @@ CONSTRAINT FOREIGN key(collegeid)  REFERENCES tbl_college(collegeid)
 1. join 
 2. inner join 
 3. outer join 
-  - left join 
-  - right join 
-  - full join (not supported in mySql)
+- left join 
+- right join 
+- full join (not supported in mySql)
 4. union join
 5. cross join 
 6. self join 
@@ -955,7 +955,7 @@ select users.*, cname , sname, ctname  from users join country on users.cid=coun
 ```
 
 # inner join : 
- 
+
 1. SQL inner join are used to join more than one tables with common field 
 2. SQL inner join is used to join with match field one table to another table join that data and return all data of first table and also join matched data
 
@@ -1060,7 +1060,7 @@ select orders.*, first_name, email, product_name from orders right join customer
 select users.*, cname from users left join country on users.cid=country.cid
 union
 select users.*, cname from users right join country on users.cid=country.cid 
- 
+
 ```
 
 # cross join : 
@@ -1077,8 +1077,8 @@ select * from users cross join country;
 # its used in chain marketing 
 
 ```
-     A
- B    C     D
+A
+B    C     D
 EFG  HIJ   KLM   
 
 ```
@@ -1134,7 +1134,76 @@ select * from employee where name like '%s';
 or
 select * from employee where name like '%a%';
 ```
-
 # self join : 
+
+# def : 
+
+1. self join are used to join with itself 
+2. self join are not used another tables but used itself to join with common field or matched data 
+
+```
+select e.empid ,e.name as employeename , m.manager as manager_name from employee e join employee m on e.empid=m.empid; 
+
+```
+
+# SQL View  :  
+
+1. sql view are used to create a dublicate table of main tables 
+2. sql view create a clone tables of main tables 
+3. sql view is used to hide some data from some users there we create a view 
+4. view is create a clone of main tables and we create to insert | delete | update any new data inside of clone tables it will be effected in main tables also. 
+5. sql view create a virtual tables of main table 
+
+**examples of syntax**
+```
+create view viewane as select columnamename1, columnname2  from tablename;
+or 
+create view viewane as select columnamename1, columnname2  from tablename where name in ('smith','mansi');
+or 
+create view viewane as select columnamename1, columnname2  from tablename where id in (1,5);
+
+```
+
+# SQL indexer or index : 
+1. indexer create to perfomed speed optimized of tables 
+2. indexer create to performed 10x fast load data from tables 
+3. indexer create to fast lookups or search data from tables 
+
+# types of indexer 
+1. there are two types of indexer 
+2. create an indexer after can not create a indexer with sam name 
+
+- single indexer (if create on single columns of tables)
+- composite indexer (if create more than one columns composite indexer)
+
+# how to create indexer 
+
+```
+create index indexname on tablename (columnname1);
+or 
+create index indexname on tablename (id,name,salary, department);
+or
+create index indexname_employee1 on employee(name);
+or
+create index indexname_employee2 on employee(empid,name,age,salary,department);
+```
+
+# SQL string function  :
+
+1. manupulating string inside of tables there we used string function 
+2. its is manipulating a string in sql 
+
+# examples of string function ...
+
+- length()
+- upper()
+- concate()
+- lower()
+- trim()
+- replace()
+- right()
+- left()
+
+
 
 
