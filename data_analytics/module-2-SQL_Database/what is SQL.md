@@ -1197,7 +1197,7 @@ create index indexname_employee2 on employee(empid,name,age,salary,department);
 
 - length()
 - upper()
-- concate()
+- concat()
 - lower()
 - trim()
 - replace()
@@ -1205,5 +1205,74 @@ create index indexname_employee2 on employee(empid,name,age,salary,department);
 - left()
 
 
+# examples of string function 
 
+1.  select length('rushikesh') from employee where empid=2;
+2. select length(name) from employee;
+3. select length(name) from employee where name='smith';
+4. select upper(name) from employee;
+5. select lower(name) from employee;
+6. select concat(name,lname) from employee
+7. select trim(name) from  employee where empid=5; 
+8. select replace('pizza liked by ashtha','ashtha','babbu bhai') from employee where empid=4;
+**left right syntax**
+```
+LEFT(string, number_of_characters)
+RIGHT(string, number_of_characters)
+```
+9. select left(name, 9) from employee; 
+10. select right(name, 9) from employee; 
+
+
+# w.a.q to stored a 10k data to check a speed of tables 
+
+**examples**
+
+```
+
+INSERT INTO tbl_country (cname)
+SELECT CONCAT(
+    ELT(
+        FLOOR(1 + RAND() * 9),
+        'india',
+        'usa',
+        'germany',
+        'australia',
+        'china',
+        'russia',
+        'japan',
+        'brazil',
+        'uk'
+    ),
+    '_',
+    FLOOR(1000 + RAND() * 9000)
+)
+FROM (
+    SELECT 1
+    FROM information_schema.columns a
+    CROSS JOIN information_schema.columns b
+    LIMIT 20000
+) AS x
+WHERE ELT(
+    FLOOR(1 + RAND() * 9),
+    'india', 'usa', 'germany', 'australia', 'china',
+    'russia', 'japan', 'brazil', 'uk'
+) IS NOT NULL;
+ 
+               
+```
+
+# screenshot of data in CSV or .xlsx or .json  or xlsx formate 
+
+![alt text](image-7.png)
+
+# screenshot of data in .sql
+
+![alt text](image-8.png)
+
+
+
+# SQL windows function ................
+
+# SQL CTE (common table expression)
 
