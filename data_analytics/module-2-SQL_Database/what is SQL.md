@@ -1271,8 +1271,201 @@ WHERE ELT(
 ![alt text](image-8.png)
 
 
-
 # SQL windows function ................
 
-# SQL CTE (common table expression)
+1. windows function is used to applied calculations and add unique rows in a tables there we used windows function
+
+2. windows function is a inbuild function of SQL 
+
+3. windows function are used to add or set a rows related to current row without grouping the result into a single row 
+
+
+# types of windows function 
+
+1. row_number()
+2. rank()
+3. dense_rank()
+4. ntile()
+5. lag()
+6. lead()
+7. first_value()
+8. last_values()
+9. sum() over()
+10. avg() over()
+11. count() over()
+12. max() over()
+13. min() over()
+
+# examples of windows function .. 
+
+**row_number()**
+
+1. add a unique number to each rows there we used a row_number()
+
+**examples**
+
+```
+select name,salary,row_number() over(order by salary DESC) from employee;
+```
+
+**rank()**
+
+1. provides ranking with gaps for dublicate values 
+
+**examples**
+
+```
+select name , salary, rank() over(order by salary desc) from employee;
+```
+
+**dense_rank()**
+
+1. provides a ranking without gaps for dublicate values 
+
+**examples**
+
+```
+select name , salary, dense_rank() over(order by salary desc) from employee;
+```
+
+
+**ntile()**
+
+1. provides rows into equal group 
+
+**examples**
+
+```
+select name , salary, ntile(3) over(order by salary desc) as group_number from employee;
+```
+
+
+**lag()**
+
+1. return a previous rows value 
+
+**examples**
+
+```
+select name , salary, lag(salary) over(order by salary desc) as previous_salary from employee;
+```
+
+
+
+**lead()**
+
+1. return a next rows value 
+
+**examples**
+
+```
+select name , salary, lead(salary) over(order by salary desc) as next_salary from employee;
+```
+
+
+
+**first_value()**
+
+1. return a first_values() in a windows 
+
+**examples**
+
+```
+select name , salary, first_value(salary) over(order by salary desc) as first_max_salary from employee;
+
+```
+
+
+
+**last_value()**
+
+1. return a last_values() in a windows 
+
+**examples**
+
+```
+select name , salary, last_value(salary) over(order by salary desc) as last_min_salary from employee;
+
+```
+
+
+**sum() over()**
+
+1. running or return with total windows 
+
+**examples**
+
+```
+select name , salary, sum(salary) over(order by salary desc) as sum_of_salary from employee;
+
+```
+
+**avg() over()**
+
+1. running or return with avg windows 
+
+**examples**
+
+```
+select name , salary, avg(salary) over(order by salary desc) as avg_of_salary from employee;
+
+```
+
+
+**count() over()**
+
+1. running with total count  of  windows 
+
+**examples**
+
+```
+select name , salary, count() over(order by salary desc) as count_of_salary from employee;
+
+```
+
+
+**max() over()**
+
+1. returning max values in windows  
+
+**examples**
+
+```
+select name , salary, max(salary) over(order by salary desc) as max_of_salary from employee;
+
+```
+
+
+**min() over()**
+
+1. returning min values in windows  
+
+**examples**
+
+```
+select name , salary, min(salary) over(order by salary desc) as min_of_salary from employee;
+
+```
+
+# SQL CTE (common table expression) or with cluase 
+# with clause 
+
+1. CTE stands for (common table expression) 
+2. the SQL CTE defines a temporary result set that can be used within a query 
+3. it simplifies complex SQL statements making them easiar to read, manage and reuse there used with cluse or CTE ...
+
+**examples of CTE**
+
+```
+with AverageValueCTE as (SELECT AVG(salary) from employee) select empid, name, salary from employee  where salary > (select * from AverageValueCTE);
+
+
+```
+
+# sql database connect with excel
+
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+
 
