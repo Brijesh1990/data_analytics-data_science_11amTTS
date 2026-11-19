@@ -190,3 +190,5 @@ nm='my name is om'
 print(nm)
 
 ```
+
+# what is operator in python ? 
